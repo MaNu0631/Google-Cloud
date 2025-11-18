@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Google cloud IMP",
+  "description": "An AI-powered application that converts natural-language descriptions of electrical circuits into validated, structured XML, and provides a live visual SVG preview using a built-in topology engine.",
+  "requestFramePermissions": []
+}
