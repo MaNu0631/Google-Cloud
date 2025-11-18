@@ -11,6 +11,8 @@ The system is built with a serverless, microservices architecture:
 5. **Gemini AI Integration**: Gemini acts as the reasoning engine—interprets the user prompt, applies engineering logic, converts the component graph to XML, and ensures design validity.  
 6. **User Output**: The user receives a validated, ready-to-use electrical diagram (XML) and can view a rendered visual preview in the UI.
 
+<img width="727" height="599" alt="image" src="https://github.com/user-attachments/assets/aa3870f6-887b-4356-ab38-f6a558c69031" />
+
 ## Prerequisites  
 - Node.js v18+ installed  
 - Vite + React for frontend  
@@ -115,6 +117,8 @@ Generator to busbar to breaker to transformer to load.
 4. You should receive:
    - A **rendered diagram**
    - A **downloadable XML design file**
+<img width="720" height="352" alt="image" src="https://github.com/user-attachments/assets/9c0a2b55-ad80-49e6-abb7-668386194b7e" />
+
 
 ---
 
