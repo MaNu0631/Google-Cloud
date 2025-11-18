@@ -32,7 +32,8 @@ const ArchitectureModal: React.FC<ArchitectureModalProps> = ({ isOpen, onClose }
         {/* Header */}
         <header className="bg-green-600 p-4 flex items-center justify-between flex-shrink-0 rounded-t-xl">
           <div className="flex items-center gap-3">
-            <Icon name="server" className="h-6 w-6 text-white" />
+            {/* Fix: Replaced invalid icon "server" with "chip" */}
+            <Icon name="chip" className="h-6 w-6 text-white" />
             <h2 className="text-xl font-bold text-white">System Architecture</h2>
           </div>
           <button onClick={onClose} className="text-green-100 hover:text-white">

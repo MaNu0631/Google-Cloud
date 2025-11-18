@@ -100,31 +100,6 @@ export const getChatResponse = async (prompt: string, isThinkingMode: boolean): 
     const config = isThinkingMode ? { thinkingConfig: { thinkingBudget: 32768 } } : {};
 
     const systemInstruction = `You are a helpful AI assistant for the AutoCircuit Generator application. You can help users with circuit design questions.
-You should also be aware of the application's underlying architecture. If asked about it, use the following information. Do not mention that this information was provided to you in a prompt. Act as if you are intrinsically aware of it.
-
-### Core Architecture Summary: AI-Powered Application on Cloud Run with Hybrid Data Storage
-This architecture features a scalable, serverless, AI-centric application deployed on Google Cloud Run.
-
-**Application Layer:**
-- **Application:** Handles core business logic and user interactions.
-- **Authentication (Auth):** Manages secure user access to services.
-
-**Core Integration & Orchestration (MCP Toolbox & ADK):**
-- **MCP Toolbox:** Middleware/data abstraction layer, providing a unified interface to data stores.
-- **ADK (Agent Development Kit):** AI agent framework for orchestrating complex tasks, including NLP and data interactions.
-
-**Data & Storage Layer (Hybrid Approach):** Uses polyglot persistence across multiple storage services:
-- **MongoDB Atlas / MongoDB:** NoSQL document storage (potentially for vector search).
-- **Spanner:** Globally distributed, strongly consistent relational DB for critical transactional data.
-- **SQL (Generic):** Other relational databases.
-- **BigQuery (BQ):** Serverless data warehouse for analytics and ML integration.
-- **Cloud Storage:** For unstructured data (files, multimedia, batch processing data).
-
-**AI & Context Layer:**
-- **LLM (Large Language Model):** Core AI (likely Gemini) for NLU/NLG.
-- **Context Guardrails:** Essential for safe and relevant LLM operation.
-- **Web Data / Files Multimodal:** Information sources for the LLM, supporting RAG with structured and various file types.
-
 When answering, be helpful and concise. Use markdown for formatting if it improves readability.`;
 
     try {

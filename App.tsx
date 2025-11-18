@@ -12,7 +12,7 @@ import ArchitectureModal from './components/ArchitectureModal';
 const PREDEFINED_COMPONENTS = ['Resistor', 'Capacitor', 'Inductor', 'Diode', 'Transistor', 'Op-Amp'];
 
 const App: React.FC = () => {
-  const [prompt, setPrompt] = useState<string>('Create a circuit with a 9V power source, a relay, and a red LED connected in series.');
+  const [prompt, setPrompt] = useState<string>('Create a circuit with a breaker and busbar connected');
   const [userComponents, setUserComponents] = useState<CustomComponent[]>([]);
   const [selectedLibraryComponents, setSelectedLibraryComponents] = useState<string[]>([]);
   const [generatedXml, setGeneratedXml] = useState<string>('');
@@ -22,7 +22,6 @@ const App: React.FC = () => {
   const [error, setError] = useState<string>('');
   const [componentsChanged, setComponentsChanged] = useState<boolean>(false);
   const [isManagerOpen, setIsManagerOpen] = useState(false);
-  const [isArchitectureModalOpen, setIsArchitectureModalOpen] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState<ComponentDetails | null>(null);
   const [zoom, setZoom] = useState({ scale: 1, x: 0, y: 0 });
 
@@ -329,13 +328,6 @@ const App: React.FC = () => {
             <p className="text-sm text-green-100">AI-Powered Circuit Diagramming from Natural Language</p>
             </div>
         </div>
-        <button
-          onClick={() => setIsArchitectureModalOpen(true)}
-          className="text-green-100 hover:text-white p-2 rounded-full hover:bg-green-700 transition-colors"
-          title="View System Architecture"
-        >
-          <Icon name="server" className="h-6 w-6" />
-        </button>
       </header>
 
       <main className="flex-grow p-4 lg:p-6 grid grid-cols-1 xl:grid-cols-3 gap-6">
@@ -507,11 +499,6 @@ const App: React.FC = () => {
         onFileUpload={onFileUpload}
         onUpdateCustomComponent={handleUpdateUserComponent}
         onDeleteCustomComponent={handleDeleteUserComponent}
-      />
-
-      <ArchitectureModal 
-        isOpen={isArchitectureModalOpen}
-        onClose={() => setIsArchitectureModalOpen(false)}
       />
 
       <style>{`
